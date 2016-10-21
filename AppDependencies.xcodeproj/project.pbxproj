@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		212A40091DBAD55400069BAB /* AppDependencies.h in Headers */ = {isa = PBXBuildFile; fileRef = 212A40071DBAD55400069BAB /* AppDependencies.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		212A40101DBAD58900069BAB /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212A400F1DBAD58900069BAB /* AppDependencies.swift */; };
+		212A40121DBAD5E200069BAB /* EventEmitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 212A40111DBAD5E200069BAB /* EventEmitter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		212A40041DBAD55400069BAB /* AppDependencies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppDependencies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		212A40071DBAD55400069BAB /* AppDependencies.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDependencies.h; sourceTree = "<group>"; };
 		212A40081DBAD55400069BAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		212A400F1DBAD58900069BAB /* AppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+		212A40111DBAD5E200069BAB /* EventEmitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventEmitter.framework; path = Carthage/Build/iOS/EventEmitter.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -21,6 +25,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				212A40121DBAD5E200069BAB /* EventEmitter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -30,6 +35,7 @@
 		212A3FFA1DBAD55400069BAB = {
 			isa = PBXGroup;
 			children = (
+				212A40111DBAD5E200069BAB /* EventEmitter.framework */,
 				212A40061DBAD55400069BAB /* AppDependencies */,
 				212A40051DBAD55400069BAB /* Products */,
 			);
@@ -48,6 +54,7 @@
 			children = (
 				212A40071DBAD55400069BAB /* AppDependencies.h */,
 				212A40081DBAD55400069BAB /* Info.plist */,
+				212A400F1DBAD58900069BAB /* AppDependencies.swift */,
 			);
 			path = AppDependencies;
 			sourceTree = "<group>";
@@ -96,6 +103,7 @@
 					212A40031DBAD55400069BAB = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = TE3XP65K6X;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -132,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				212A40101DBAD58900069BAB /* AppDependencies.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,18 +249,24 @@
 		212A400D1DBAD55400069BAB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = TE3XP65K6X;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = AppDependencies/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gujci.AppDependencies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -259,12 +274,17 @@
 		212A400E1DBAD55400069BAB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = TE3XP65K6X;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = AppDependencies/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
