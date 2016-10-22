@@ -8,6 +8,11 @@ Basic dependency manager tool for iOS applications
 ```
 github "Gujci/AppDependencies"
 ```
+
+# Example
+
+https://github.com/Gujci/JSONPlaceholderTest
+
 # TODO
 
 - [ ] Travis
