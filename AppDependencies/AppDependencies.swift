@@ -64,4 +64,10 @@ public extension Dependencies {
         }
         return request()
     }
+    
+    public func reset<T: Injectable>() -> T? {
+        let old = presenters[T.id]?.last as? T
+        presenters[T.id] = nil
+        return old
+    }
 }
