@@ -17,5 +17,8 @@ https://github.com/Gujci/JSONPlaceholderTest
 # TODO
 
 - [x] Travis
+
+### 0.1 goals
+
 - [ ] Documentation
 - [ ] Unit tests
