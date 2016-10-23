@@ -1,0 +1,27 @@
+language: objective-c
+osx_image: xcode8
+xcode_project: AppDependencies.xcodeproj
+xcode_scheme: AppDependencies
+xcode_sdk: iphonesimulator10.0
+env: 
+global:
+- FRAMEWORK_NAME=AppDependencies
+before_install:
+- brew update
+- brew outdated carthage || brew upgrade carthage
+before_script:
+- carthage update --platform iOS
+before_deploy:
+- carthage build --no-skip-current
+- carthage archive $FRAMEWORK_NAME
+script: xcodebuild -scheme 'AppDependencies' -destination 'platform=iOS Simulator,name=iPhone
+  6,OS=10.0'
+deploy:
+  provider: releases
+  api_key:
+    secure: UlOx61eVEM/AGORCXGDbHi/jo2QOH6L/5bEmd7iI3H42SR8FzA//9QfGt87+cB/wV3qGXyxZT24JJF3Ziu768hVER/eYcpw1xN5zrfLJthT01waVJCXu/Y7JXqmh9+KodQcycg6/pjxrs+FQJLlS+qpAQ5WZXpYAc4WxZFPFoFz+rLz/LMJD19ZvguRPax26Rz4tbV+2+T8qq3O/KuDF++O2ZwWz+TAgSmROjAuGD2CSVZG8JIJ/aLdv3tKTOxfflUquszIIwi5E3sRJq8vLO7Qbc/2vVLygvrrLS12hC+w3AWv0WfOYJkcCM4TEkkDSjbUKaWPIBn2Ws7cxrO8LDxxfD/LsQ88hx9OkiD60D9Q7xYOl2WjZwLY+0Vo5xLwVPvj6FXW3TPyFwPoH9BdTvWBSuSNsl573+G8Fb/cexwLWzmGU2trZVyzVnrpep10SdhdAESRaI4IugIjMOHDH0eeJB2m0qSQHYmYyeeVqKuhtH17c0RSr2jbC82fh8tQfx34iqpzniCQBQTNsb6dlbKCsGeVO1CDNcuFhp4dG0SdQSseqQlF0qbF7NnhorD+ehvL0D79V0dKw8M/l+AHdiV9QYSMJ6Wo6L6IzCJDLl13Hkxwxye/BZcMSJfo5wc4bgcX7mDHmYORcUCcGg54GvdrO/2IEpGajMeVmo+VSw7M=
+  file: "$FRAMEWORK_NAME.framework.zip"
+  skip_cleanup: true
+  on:
+    repo: Gujci/AppDependencies
+    tags: true
