@@ -2,6 +2,7 @@
 Basic dependency manager tool for iOS applications
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Build Status](https://travis-ci.org/Gujci/AppDependencies.svg?branch=master)](https://travis-ci.org/Gujci/AppDependencies)
 
 # Installation
 ## Carthage
@@ -15,6 +16,6 @@ https://github.com/Gujci/JSONPlaceholderTest
 
 # TODO
 
-- [ ] Travis
+- [x] Travis
 - [ ] Documentation
 - [ ] Unit tests
