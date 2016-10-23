@@ -7,7 +7,7 @@ env:
   global:
   - FRAMEWORK_NAME=AppDependencies
 before_install:
- - brew update
+- brew update
 - brew outdated carthage || brew upgrade carthage
 before_script:
 - carthage update --platform iOS
