@@ -29,7 +29,26 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "21B70CCF1DC91DBB0031250D"
+               BuildableName = "AppDependenciesTests.xctest"
+               BlueprintName = "AppDependenciesTests"
+               ReferencedContainer = "container:AppDependencies.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "212A40031DBAD55400069BAB"
+            BuildableName = "AppDependencies.framework"
+            BlueprintName = "AppDependencies"
+            ReferencedContainer = "container:AppDependencies.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
