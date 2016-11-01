@@ -24,3 +24,8 @@ deploy:
   on:
     repo: Gujci/AppDependencies
     tags: true
+notifications:
+  slack:
+    rooms:
+    - gujci:DuPnfha4iWOo2wYoZuZsYgQa#appdependencies
+  email: false
