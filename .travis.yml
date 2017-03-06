@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode8
+osx_image: xcode8.2
 xcode_project: AppDependencies.xcodeproj
 xcode_scheme: AppDependencies
 xcode_sdk: iphonesimulator10.0
