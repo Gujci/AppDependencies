@@ -31,21 +31,21 @@ open class Dependencies: EventEmitter {
 // MARK: - Injectable dependencies
 public extension Dependencies {
     
-    public func request<T: Injectable>() -> T {
+    func request<T: Injectable>() -> T {
         if let old = presenters[T.id]?.last as? T {
             return old
         }
         return new()
     }
     
-    public func new<T: Injectable>() -> T {
+    func new<T: Injectable>() -> T {
         let newModule = T.create()
         presenters[T.id] = [newModule]
         emit(DependenciEvents.dependencyAdded, information: T.id)
         return newModule
     }
     
-    public func push<T: Injectable>() -> T {
+    func push<T: Injectable>() -> T {
         if let _ = presenters[T.id] as? [T] {
             let newModule = T.create()
             presenters[T.id]?.append(newModule)
@@ -54,18 +54,18 @@ public extension Dependencies {
         return new()
     }
     
-    public func pop<T: Injectable>() -> T? {
+    func pop<T: Injectable>() -> T? {
         return presenters[T.id]?.popLast() as? T
     }
     
-    public func safePop<T: Injectable>() -> T {
+    func safePop<T: Injectable>() -> T {
         if presenters[T.id]?.count ?? 0 > 0 {
             return presenters[T.id]?.popLast() as! T
         }
         return request()
     }
     
-    public func reset<T: Injectable>() -> T? {
+    func reset<T: Injectable>() -> T? {
         let old = presenters[T.id]?.last as? T
         presenters[T.id] = nil
         return old
